@@ -43,7 +43,7 @@ Stored Procs
 
 User Defined Functions
 
-  5. Get Number of Students in Booking
+  1. Get Number of Students in Booking
 
   
    

@@ -1,9 +1,3 @@
-CREATE PROCEDURE getUserType(@UserID int) AS 
-    BEGIN
-        return SELECT Persontype FROM PersonType WHERE PersonTypeID = (SELECT PersonTypeID FROM Users WHERE UserID = @UserID)
-    END
-GO;
-
 CREATE PROCEDURE bookLesson(@BookingID int, @UserID int) AS
     BEGIN
         IF (getUserType(@UserID) = 'parent' 

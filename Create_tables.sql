@@ -58,6 +58,7 @@ CREATE TABLE dbo.Bookings(
     StudentLimit int NULL,
     StartTime datetime NULL,
     EndTime datetime NULL,
+    Available bit NOT NULL DEFAULT 1,
     CONSTRAINT [PK_Bookings] PRIMARY KEY CLUSTERED ([BookingsID] ASC),
 	CONSTRAINT [FK_Tutor] FOREIGN KEY (TutorID)
 	REFERENCES dbo.Users (UserID),

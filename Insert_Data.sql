@@ -11,6 +11,8 @@ VALUES ('eric@gmail.com', 'Eric', 'Cartman', 1),
        ('kyle@gmail.com', 'Kyle', 'Broflovski', 3),
        ('guy@gmail.com', 'guy', 'man', 2),
        ('naruto@gmail.com', 'naruto', 'uzumaki', 1),
+       ('boruto@gmail.com', 'boruto', 'uzumaki', 2),
+       ('hima@gmail.com', 'himawari', 'uzumaki', 2),
        ('kayden@gmail.com', 'kayden', 'kara', 2),
        ('rick@gmail.com', 'rick', 'astly', 2),
        ('bob@gmail.com', 'bob', 'builder', 2),
@@ -47,5 +49,11 @@ GO
 Insert INTO dbo.ParentStudentLinks (ParentID,StudentID)
 VALUES (1,2),
        (6,5),
-       (1,7);
+       (1,7),
+       (dbo.getUserID('sam@gmail.com'),dbo.getUserID('rick@gmail.com')),
+       (dbo.getUserID('sam@gmail.com'),dbo.getUserID('nick@gmail.com')),
+       (dbo.getUserID('noel@gmail.com'),dbo.getUserID('rob@gmail.com')),
+       (dbo.getUserID('noel@gmail.com'),dbo.getUserID('bob@gmail.com')),
+       (dbo.getUserID('naruto@gmail.com'),dbo.getUserID('boruto@gmail.com')),
+       (dbo.getUserID('naruto@gmail.com'),dbo.getUserID('hima@gmail.com'));
 GO

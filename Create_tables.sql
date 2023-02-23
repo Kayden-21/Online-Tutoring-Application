@@ -26,12 +26,14 @@ GO
 -- Create our main Users table
 CREATE TABLE dbo.Users(
     UserID int IDENTITY(1,1) NOT NULL,
+    Email varchar(120) NOT NULL, 
     FirstName varchar(120) NULL,
 	LastName varchar(120) NULL,
     PersonTypeID int NULL,
     CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED ([UserID] ASC),
 	CONSTRAINT [FK_User_PersonType] FOREIGN KEY (PersonTypeID)
-	REFERENCES dbo.PersonType (PersonTypeID)
+	REFERENCES dbo.PersonType (PersonTypeID),
+    CONSTRAINT [Email] CheckEmail CHECK(Email LIKE '%_@___%') 
 );
 GO
 
@@ -53,6 +55,7 @@ CREATE TABLE dbo.Bookings(
     BookingsID int IDENTITY(1,1) NOT NULL,
     TutorID int NULL,
 	SubjectID int NULL,
+    StudentLimit int NULL,
     StartTime datetime NULL,
     EndTime datetime NULL,
     CONSTRAINT [PK_Bookings] PRIMARY KEY CLUSTERED ([BookingsID] ASC),

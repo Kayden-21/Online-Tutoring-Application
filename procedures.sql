@@ -6,7 +6,8 @@ GO;
 
 CREATE PROCEDURE bookLesson(@BookingID int, @UserID int) AS
     BEGIN
-        IF (getUserType(@UserID) = 'parent')
+        IF (getUserType(@UserID) = 'parent' 
+        AND (SELECT COUNT(*) FROM StudentBookingLinks WHERE BookingID = @BookingID) < (SELECT StudentLimit FROM Bookings WHERE BookingID = @BookingID))
         INSERT INTO StudentBookingLinks (BookingID, StudentID)
         VALUES (@BookingID, (SELECT StudentID FROM ParentStudentLinks WHERE ParentID = @UserID))
     END

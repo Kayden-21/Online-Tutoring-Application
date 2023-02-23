@@ -34,13 +34,13 @@ Views
     - Number of Students
 
 Stored Procs
-  - Create Lesson (Tutor Side)
-  - Cancel Lesson (Tutor Side)
-  - Book Lesson (Parent Side)
-  - Unbook Lesson (Parent Side)
+  1. Create Lesson (Tutor Side)
+  2. Cancel Lesson (Tutor Side)
+  3. Book Lesson (Parent Side)
+  4. Unbook Lesson (Parent Side)
 
 User Defined Functions
-  - Get Number of Students in Booking
+  5. Get Number of Students in Booking
 
   
    

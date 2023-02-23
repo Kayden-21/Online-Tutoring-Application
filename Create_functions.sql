@@ -13,7 +13,7 @@ END;
 GO
 
 -- 2. Get Person Type of a user
-CREATE FUNCTION getUserType(@UserID as int)
+CREATE FUNCTION dbo.getUserType(@UserID as int)
 RETURNS varchar(120)
 AS
 BEGIN

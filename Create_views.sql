@@ -23,7 +23,7 @@ INNER JOIN Subject S
     ON S.SubjectID = B.SubjectID
 INNER JOIN Users Tutor 
     ON Tutor.UserID = B.TutorID
-WHERE (StartTime > GETDATE());
+WHERE (StartTime > GETDATE() AND B.Available = 1);
 GO
 
 --  2. Booked Sessions (Parent Side)
@@ -39,7 +39,8 @@ SELECT
     [Name] AS [Subject],
     [Grade],
 	B.[StartTime],
-	B.[EndTime]
+	B.[EndTime],
+    B.[Available]
 FROM StudentBookingLinks
 INNER JOIN Users Student 
     ON StudentBookingLinks.StudentID = Student.UserID
@@ -63,7 +64,8 @@ SELECT
     [Name] AS [Subject],
     [Grade],
 	B.[StartTime],
-	B.[EndTime]
+	B.[EndTime],
+    B.[Available]
 FROM StudentBookingLinks
 INNER JOIN Users Student 
     ON StudentBookingLinks.StudentID = Student.UserID
@@ -86,7 +88,9 @@ SELECT
     S.[Name] AS [Subject],
     S.[Grade],
     B.[StudentLimit],
-    dbo.NumberOfStudentsInBooking(B.BookingsID) AS [StudentCount]
+    dbo.NumberOfStudentsInBooking(B.BookingsID) AS [StudentCount],
+    B.[Available]
+    
 FROM Users Tutor
 INNER JOIN Bookings B 
     ON B.TutorID = Tutor.UserID

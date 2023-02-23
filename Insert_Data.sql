@@ -41,10 +41,9 @@ VALUES (3,2,5,'20230618 10:34:09 AM','20120618 10:40:09 AM'),
 GO
 
 INSERT INTO dbo.StudentBookingLinks (BookingsID,StudentID)
-VALUES (4,2),
-       (4,5),
-       (5,7);
-GO
+VALUES (1,2),
+       (1,5),
+       (2,7);
 
 Insert INTO dbo.ParentStudentLinks (ParentID,StudentID)
 VALUES (1,2),

@@ -4,7 +4,7 @@ IF OBJECT_ID (N'NumberOfStudentInBooking', N'FN') IS NOT NULL
     DROP FUNCTION NumberOfStudentInBooking;
 GO
 
-CREATE FUNCTION dbo.NumberOfStudentInBooking(@bookingid as int)
+CREATE FUNCTION dbo.NumberOfStudentsInBooking(@bookingid as int)
 RETURNS int
 AS
 BEGIN

@@ -1,5 +1,10 @@
 --  1. Get Number of Students in Booking
-CREATE FUNCTION NumberOfStudentsInBooking(@bookingid as int)
+
+IF OBJECT_ID (N'NumberOfStudentInBooking', N'FN') IS NOT NULL
+    DROP FUNCTION NumberOfStudentInBooking;
+GO
+
+CREATE FUNCTION dbo.NumberOfStudentsInBooking(@bookingid as int)
 RETURNS int
 AS
 BEGIN
@@ -10,9 +15,15 @@ BEGIN
 
     RETURN @studentnum
 END;
+GO
 
 -- 2. Get Person Type of a user
-CREATE FUNCTION getUserType(@UserID as int)
+
+IF OBJECT_ID (N'getUserType', N'FN') IS NOT NULL
+    DROP FUNCTION getUserType;
+GO
+
+CREATE FUNCTION dbo.getUserType(@UserID as int)
 RETURNS varchar(120)
 AS
 BEGIN
@@ -23,3 +34,22 @@ BEGIN
 
     RETURN @UserType
 END;
+GO
+
+
+IF OBJECT_ID (N'getUserID', N'FN') IS NOT NULL
+    DROP FUNCTION getUserID;
+GO
+
+CREATE FUNCTION dbo.getUserID(@UserEmail as varchar(120))
+RETURNS int
+AS
+BEGIN
+    DECLARE @ID AS INT
+    SELECT @ID = U.UserID
+    FROM Users U
+    WHERE (U.Email = @UserEmail)
+
+    Return @ID
+END;
+GO

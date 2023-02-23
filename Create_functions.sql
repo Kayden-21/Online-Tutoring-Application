@@ -1,5 +1,5 @@
 --  1. Get Number of Students in Booking
-CREATE FUNCTION NumberOfStudentInBooking(@bookingid as int)
+CREATE FUNCTION NumberOfStudentsInBooking(@bookingid as int)
 RETURNS int
 AS
 BEGIN

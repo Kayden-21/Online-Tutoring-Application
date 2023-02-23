@@ -1,5 +1,5 @@
 --  1. Get Number of Students in Booking
-CREATE FUNCTION NumberOfStudentInBooking(@bookingid as int)
+CREATE FUNCTION dbo.NumberOfStudentInBooking(@bookingid as int)
 RETURNS int
 AS
 BEGIN
@@ -10,6 +10,7 @@ BEGIN
 
     RETURN @studentnum
 END;
+GO
 
 -- 2. Get Person Type of a user
 CREATE FUNCTION getUserType(@UserID as int)
@@ -23,3 +24,4 @@ BEGIN
 
     RETURN @UserType
 END;
+GO

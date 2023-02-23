@@ -33,7 +33,7 @@ CREATE TABLE dbo.Users(
     CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED ([UserID] ASC),
 	CONSTRAINT [FK_User_PersonType] FOREIGN KEY (PersonTypeID)
 	REFERENCES dbo.PersonType (PersonTypeID),
-    CONSTRAINT [Email] CheckEmail CHECK(Email LIKE '%_@___%') 
+    CONSTRAINT [CheckEmail] CHECK(Email LIKE '%_@___%')
 );
 GO
 

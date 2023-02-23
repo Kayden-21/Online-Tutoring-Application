@@ -28,6 +28,16 @@ Views
     - End Time
     - Subject
     - Number of Students
+
+Stored Procs
+  - Create Lesson (Tutor Side)
+  - Cancel Lesson (Tutor Side)
+  - Book Lesson (Parent Side)
+  - Unbook Lesson (Parent Side)
+
+User Defined Functions
+  - Get Number of Students in Booking
+
   
    
     

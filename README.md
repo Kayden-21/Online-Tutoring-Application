@@ -1,6 +1,7 @@
 # Online-Tutoring-Application
 
 Views
+
   1. Available Lessons (Parent Side)
  
     - Subject
@@ -34,12 +35,14 @@ Views
     - Number of Students
 
 Stored Procs
+
   1. Create Lesson (Tutor Side)
   2. Cancel Lesson (Tutor Side)
   3. Book Lesson (Parent Side)
   4. Unbook Lesson (Parent Side)
 
 User Defined Functions
+
   5. Get Number of Students in Booking
 
   

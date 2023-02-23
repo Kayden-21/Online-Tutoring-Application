@@ -2,6 +2,6 @@
 
 Views
   - Available Lessons
-    - Session
+    - Subject {name, grade}
     - Number of Spaces taken
     - Number of Spaces left

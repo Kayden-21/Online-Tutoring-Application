@@ -72,7 +72,7 @@ GO
 CREATE VIEW vTutorSessions
 AS
 SELECT 
-    Tutor.[TutorID],
+    Tutor.[UserID] AS [TutorID],
     B.[StartTime],
     B.[EndTime],
     S.[Name] AS [Subject],
@@ -82,6 +82,5 @@ FROM Users Tutor
 INNER JOIN Bookings B 
     ON B.TutorID = Tutor.UserID
 INNER JOIN Subject S 
-    ON S.SubjectID = Bookings.SubjectID
-WHERE Tutor.PersonTypeID = 1
+    ON S.SubjectID = B.SubjectID
 GO

@@ -27,6 +27,5 @@ CREATE PROCEDURE unbookLesson (@ParentID int, @StudentID int, @BookingsID int) A
         IF (dbo.getUserType(@ParentID) = 'Parent') 
         DELETE FROM StudentBookingLinks 
         WHERE StudentID = @StudentID 
-        AND ParentID = @ParentID 
         AND @BookingsID = BookingsID
     END

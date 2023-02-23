@@ -1,3 +1,10 @@
+-- Cleanup
+DROP VIEW vAvailableLessons
+DROP VIEW vBookedSessions
+DROP VIEW vStudentBookings
+DROP VIEW vTutorSessions
+GO
+
 --  1. Available Lessons (Parent Side)
  
 CREATE VIEW vAvailableLessons
@@ -9,7 +16,8 @@ SELECT
     Tutor.[FirstName],
     Tutor.[LastName],
     B.[StartTime],
-    B.[EndTime]
+    B.[EndTime],
+    dbo.NumberOfStudentsInBooking(B.BookingsID) AS [StudentCount]
 FROM Bookings B
 INNER JOIN Subject S 
     ON S.SubjectID = B.SubjectID
@@ -36,7 +44,7 @@ FROM StudentBookingLinks
 INNER JOIN Users Student 
     ON StudentBookingLinks.StudentID = Student.UserID
 INNER JOIN Bookings B 
-    ON StudentBookingLinks.StudentID = B.BookingsID
+    ON StudentBookingLinks.BookingsID = B.BookingsID
 INNER JOIN Subject 
     ON B.SubjectID = Subject.SubjectID
 INNER JOIN Users Tutor 
@@ -60,7 +68,7 @@ FROM StudentBookingLinks
 INNER JOIN Users Student 
     ON StudentBookingLinks.StudentID = Student.UserID
 INNER JOIN Bookings B 
-    ON StudentBookingLinks.StudentID = B.BookingsID
+    ON StudentBookingLinks.BookingsID = B.BookingsID
 INNER JOIN Subject 
     ON B.SubjectID = Subject.SubjectID
 INNER JOIN Users Tutor 
@@ -77,7 +85,8 @@ SELECT
     B.[EndTime],
     S.[Name] AS [Subject],
     S.[Grade],
-    B.[StudentLimit]
+    B.[StudentLimit],
+    dbo.NumberOfStudentsInBooking(B.BookingsID) AS [StudentCount]
 FROM Users Tutor
 INNER JOIN Bookings B 
     ON B.TutorID = Tutor.UserID

@@ -2,6 +2,7 @@ Insert INTO dbo.PersonType(Persontype)
 VALUES ('Parent'),
        ('Student'),
        ('Tutor');
+GO
 
 INSERT INTO dbo.Users (Email, FirstName, LastName, PersonTypeID)
 VALUES ('eric@gmail.com', 'Eric', 'Cartman', 1),
@@ -10,7 +11,15 @@ VALUES ('eric@gmail.com', 'Eric', 'Cartman', 1),
        ('kyle@gmail.com', 'Kyle', 'Broflovski', 3),
        ('guy@gmail.com', 'guy', 'man', 2),
        ('naruto@gmail.com', 'naruto', 'uzumaki', 1),
-       ('kayden@gmail.com', 'kayden', 'kara', 2);
+       ('kayden@gmail.com', 'kayden', 'kara', 2),
+       ('rick@gmail.com', 'rick', 'astly', 2),
+       ('bob@gmail.com', 'bob', 'builder', 2),
+       ('rob@gmail.com', 'rob', 'builder', 2),
+       ('noel@gmail.com', 'noel', 'builder', 1),
+       ('nick@gmail.com', 'nick', 'astly', 1),
+       ('mr@gmail.com', 'mr', 'smith', 3),
+       ('sam@gmail.com', 'sam', 'astly', 3);
+GO
 
 INSERT INTO dbo.Subject (Grade, Name, Description)
 VALUES (7, 'Science', 'Biology and all things living'),
@@ -20,19 +29,23 @@ VALUES (7, 'Science', 'Biology and all things living'),
        (4, 'Chemistry', 'Chemicals and stuff'),
        (2, 'Coding', 'Java and stuff'),
        (11, 'English', 'Shakespeare and stuff');
+GO
 
 INSERT INTO dbo.Bookings (TutorID, SubjectID, StudentLimit, StartTime, EndTime)
 VALUES (3,2,5,'20230618 10:34:09 AM','20120618 10:40:09 AM'),
        (4,1,3,'20230615 10:34:09 AM','20120615 10:40:09 AM'),
        (3,4,5,'20230605 10:34:09 AM','20120605 10:40:09 AM'),
        (4,3,8,'20230607 10:34:09 AM','20120607 10:40:09 AM');
+GO
 
 INSERT INTO dbo.StudentBookingLinks (BookingsID,StudentID)
 VALUES (4,2),
        (4,5),
        (5,7);
+GO
 
 Insert INTO dbo.ParentStudentLinks (ParentID,StudentID)
 VALUES (1,2),
        (6,5),
        (1,7);
+GO

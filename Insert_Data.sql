@@ -30,20 +30,37 @@ VALUES (7, 'Science', 'Biology and all things living'),
        (5, 'Physics', 'Gravity/Laws and stuff'),
        (4, 'Chemistry', 'Chemicals and stuff'),
        (2, 'Coding', 'Java and stuff'),
-       (11, 'English', 'Shakespeare and stuff');
+       (11, 'English', 'Shakespeare and stuff'),
+       (12, 'English', 'Shakespeare and stuff'),
+       (12, 'Coding', 'Java and stuff'),
+       (12, 'Chemistry', 'Chemicals and stuff')
+       ;
 GO
 
 INSERT INTO dbo.Bookings (TutorID, SubjectID, StudentLimit, StartTime, EndTime)
 VALUES (3,2,5,'20230618 10:34:09 AM','20120618 10:40:09 AM'),
        (4,1,3,'20230615 10:34:09 AM','20120615 10:40:09 AM'),
        (3,4,5,'20230605 10:34:09 AM','20120605 10:40:09 AM'),
-       (4,3,8,'20230607 10:34:09 AM','20120607 10:40:09 AM');
+       (3,4,5,'20230605 10:34:09 AM','20120605 10:40:09 AM'),
+       (3,2,15,'20230301 03:00:00 PM','20120307 05:00:00 PM'),
+       (4,8,10,'20230301 03:00:00 PM','20120307 05:00:00 PM'),
+       (4,9,10,'20230302 03:00:00 PM','20120307 05:00:00 PM'),
+       (3,10,20,'20230302 03:00:00 PM','20120307 05:00:00 PM')
+       ;
 GO
 
 INSERT INTO dbo.StudentBookingLinks (BookingsID,StudentID)
 VALUES (1,2),
        (1,5),
-       (2,7);
+       (2,7),
+       (dbo.getUserID('rick@gmail.com'), 1),
+       (dbo.getUserID('rick@gmail.com'), 5),
+       (dbo.getUserID('rick@gmail.com'), 6),
+       (dbo.getUserID('rick@gmail.com'), 8),
+       (dbo.getUserID('nick@gmail.com'), 5),
+       (dbo.getUserID('nick@gmail.com'), 7),
+       (dbo.getUserID('nick@gmail.com'), 8),
+       (dbo.getUserID('hima@gmail.com'), 5)
 
 Insert INTO dbo.ParentStudentLinks (ParentID,StudentID)
 VALUES (1,2),

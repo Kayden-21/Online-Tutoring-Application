@@ -54,14 +54,14 @@ INSERT INTO dbo.StudentBookingLinks (BookingsID,StudentID)
 VALUES (1,2),
        (1,5),
        (2,7),
-       (dbo.getUserID('rick@gmail.com'), 1),
-       (dbo.getUserID('rick@gmail.com'), 5),
-       (dbo.getUserID('rick@gmail.com'), 6),
-       (dbo.getUserID('rick@gmail.com'), 8),
-       (dbo.getUserID('nick@gmail.com'), 5),
-       (dbo.getUserID('nick@gmail.com'), 7),
-       (dbo.getUserID('nick@gmail.com'), 8),
-       (dbo.getUserID('hima@gmail.com'), 5)
+       (1, dbo.getUserID('rick@gmail.com')),
+       (5, dbo.getUserID('rick@gmail.com')),
+       (6, dbo.getUserID('rick@gmail.com')),
+       (8, dbo.getUserID('rick@gmail.com')),
+       (5, dbo.getUserID('nick@gmail.com')),
+       (7, dbo.getUserID('nick@gmail.com')),
+       (8, dbo.getUserID('nick@gmail.com')),
+       (5, dbo.getUserID('hima@gmail.com'))
        ;
 
 Insert INTO dbo.ParentStudentLinks (ParentID,StudentID)

@@ -5,6 +5,7 @@ CREATE PROCEDURE createLesson(@UserID int, @SubjectID int, @StudentLimit int, @S
         INSERT INTO Bookings (TutorID, SubjectID, StudentLimit, StartTime, EndTime)
         VALUES (@UserID, @SubjectID, @StudentLimit, @StartTime, @EndTime)
     END
+GO
 
 --  2. Cancel Lesson (Tutor Side)
 CREATE PROCEDURE cancelLesson (@UserID int, @BookingsID int) AS
@@ -12,6 +13,7 @@ CREATE PROCEDURE cancelLesson (@UserID int, @BookingsID int) AS
         IF (dbo.getUserType(@UserID) = 'Tutor')
         UPDATE Bookings SET Available = 0 WHERE BookingsID = BookingsId
     END
+GO
 
 --  3. Book Lesson (Parent Side)
 CREATE PROCEDURE bookLesson(@BookingsID int, @ParentID int, @StudentID int) AS
@@ -20,7 +22,7 @@ CREATE PROCEDURE bookLesson(@BookingsID int, @ParentID int, @StudentID int) AS
         INSERT INTO StudentBookingLinks (BookingsID, StudentID)
         VALUES (@BookingsID, @StudentID)
     END;
-
+GO
 --  4. Un-book Lesson (Parent Side)
 CREATE PROCEDURE unbookLesson (@ParentID int, @StudentID int, @BookingsID int) AS
     BEGIN
@@ -29,3 +31,4 @@ CREATE PROCEDURE unbookLesson (@ParentID int, @StudentID int, @BookingsID int) A
         WHERE StudentID = @StudentID 
         AND @BookingsID = BookingsID
     END
+GO

@@ -36,6 +36,7 @@ BEGIN
 END;
 GO
 
+-- 3. Get User ID given their email
 
 IF OBJECT_ID (N'getUserID', N'FN') IS NOT NULL
     DROP FUNCTION getUserID;

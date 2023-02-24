@@ -61,6 +61,7 @@ VALUES (1,2),
        (dbo.getUserID('nick@gmail.com'), 7),
        (dbo.getUserID('nick@gmail.com'), 8),
        (dbo.getUserID('hima@gmail.com'), 5)
+       ;
 
 Insert INTO dbo.ParentStudentLinks (ParentID,StudentID)
 VALUES (1,2),
